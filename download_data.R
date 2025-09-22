@@ -24,7 +24,7 @@ abundance_df$taxa <- rownames(abundance_df)
 # Move taxa to the first column
 abundance_df <- abundance_df %>% relocate(taxa)
 
-write.csv(abundance_df, "MetaCardis2020_relative_abundance.csv", row.names = FALSE)
+write.csv(abundance_df, "Data/MetaCardis2020_relative_abundance.csv", row.names = FALSE)
 
 # Sample metadata
 sample_meta <- as.data.frame(colData(x))
@@ -33,7 +33,7 @@ sample_meta <- as.data.frame(colData(x))
 taxa_meta <- as.data.frame(rowData(x))
 
 # Save sample metadata
-write.csv(sample_meta, "MetaCardis2020_sample_metadata.csv", row.names = TRUE)
+write.csv(sample_meta, "Data/MetaCardis2020_sample_metadata.csv", row.names = TRUE)
 
 # Save taxa metadata
-write.csv(taxa_meta, "MetaCardis2020_taxa_metadata.csv", row.names = TRUE)
+write.csv(taxa_meta, "Data/MetaCardis2020_taxa_metadata.csv", row.names = TRUE)
