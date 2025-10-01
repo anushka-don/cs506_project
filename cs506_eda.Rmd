@@ -1,0 +1,394 @@
+---
+title: "cs506_"
+author: "Anushka Dongaonkar"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r load libraries}
+library(dplyr)
+library(DT)
+library(curatedMetagenomicData)
+library(purrr)
+```
+
+
+```{r see the data available}
+curatedMetagenomicData("AsnicarF_20.+")
+
+# most recent is 2021:
+print("most recent data is from 2021")
+curatedMetagenomicData("AsnicarF_2021.+")
+```
+## gene_families
+```{r gene_families}
+# Very big file
+# gene_families <- curatedMetagenomicData("AsnicarF_2021.gene_families", dryrun = FALSE, rownames = "short")
+# gene_families
+
+```
+
+## marker_abundance
+```{r marker_abundance}
+marker_abundance <- curatedMetagenomicData('AsnicarF_2021.relative_abundance', dryrun = FALSE, rownames = "short", counts =TRUE) 
+marker_abundance
+```
+```{r }
+x <- marker_abundance[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+
+## marker_presence
+```{r marker_presence}
+marker_presence <- curatedMetagenomicData("AsnicarF_2021.marker_presence", 
+                                          dryrun = FALSE, rownames = "short")
+marker_presence
+
+```
+```{r }
+x <- marker_presence[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+
+
+## pathway_abundance
+```{r pathway_abundance}
+pathway_abundance <- curatedMetagenomicData("AsnicarF_2021.pathway_abundance", 
+                                            dryrun = FALSE, rownames = "short")
+pathway_abundance
+
+```
+```{r }
+x <- pathway_abundance[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+## pathway_coverage
+```{r pathway_coverage}
+pathway_coverage <- curatedMetagenomicData("AsnicarF_2021.pathway_coverage", 
+                                           dryrun = FALSE, rownames = "short")
+pathway_coverage
+
+```
+```{r }
+x <- pathway_coverage[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+
+## relative_abundance
+```{r relative_abundance}
+relative_abundance <- curatedMetagenomicData("AsnicarF_2021.relative_abundance", 
+                                             dryrun = FALSE, rownames = "short")
+relative_abundance
+```
+
+```{r }
+x <- relative_abundance[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+```{r}
+unique(colData(x)$disease)
+
+```
+
+```{r}
+curatedMetagenomicData("MetaCardis_2020_a")
+```
+
+## marker_abundance
+```{r marker_abundance}
+marker_abundance <- curatedMetagenomicData('MetaCardis_2020_a.marker_abundance', dryrun = FALSE, rownames = "short") 
+marker_abundance
+```
+```{r }
+x <- marker_abundance[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+
+## marker_presence
+```{r marker_presence}
+marker_presence <- curatedMetagenomicData("MetaCardis_2020_a.marker_presence", 
+                                          dryrun = FALSE, rownames = "short")
+marker_presence
+
+```
+```{r }
+x <- marker_presence[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+
+
+## pathway_abundance
+```{r pathway_abundance}
+pathway_abundance <- curatedMetagenomicData("MetaCardis_2020_a.pathway_abundance", 
+                                            dryrun = FALSE, rownames = "short")
+pathway_abundance
+
+```
+```{r }
+x <- pathway_abundance[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+## pathway_coverage
+```{r pathway_coverage}
+pathway_coverage <- curatedMetagenomicData("MetaCardis_2020_a.pathway_coverage", 
+                                           dryrun = FALSE, rownames = "short")
+pathway_coverage
+
+```
+```{r }
+x <- pathway_coverage[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)))
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+```
+
+## relative_abundance
+```{r relative_abundance}
+relative_abundance <- curatedMetagenomicData("MetaCardis_2020_a.relative_abundance", 
+                                             dryrun = FALSE,rownames = "short")
+relative_abundance
+```
+
+```{r }
+x <- relative_abundance[[1]]
+
+# names of the columns and rows in the dataframe
+colnames(colData(x))
+colnames(rowData(x))
+
+# sample dataframes
+head(as.data.frame(colData(x)), n = 100)
+head(as.data.frame(rowData(x)))
+
+# sample names
+colnames(x)[1:10]
+
+# taxa names
+rownames(x)[1:10]
+
+```
+```{r}
+x
+```
+
+```{r}
+unique(colData(x)$disease)
+
+```
+
+```{r}
+# Convert colData to a data.frame
+meta <- as.data.frame(colData(x))
+
+# Drop columns
+# treatment column has info about the medications used
+drop_cols <- c("study_name", "PMID", "number_bases", 
+               "NCBI_accession", "subject_id", "curator", "treatment")
+meta <- meta[ , !(colnames(meta) %in% drop_cols), drop = FALSE]
+
+# Function to summarize each column
+summarize_column <- function(col) {
+  if (is.numeric(col)) {
+    return(summary(col))
+  } else {
+    return(table(col, useNA = "ifany"))
+  }
+}
+
+# Apply to all columns
+meta_summary <- map(meta, summarize_column)
+
+# Print nicely
+meta_summary
+
+```
+
+```{r}
+# Convert colData to a data.frame
+meta <- as.data.frame(colData(x))
+
+# Count NAs per column
+na_counts <- colSums(is.na(meta))
+
+# Turn into a data frame for a clean table
+na_table <- data.frame(
+  column = names(na_counts),
+  NA_count = na_counts
+)
+
+na_table
+
+```
+
+```{r}
+# Extract the TreeSummarizedExperiment
+x <- relative_abundance[[1]]
+
+# The abundance matrix (features x samples)
+abundance <- assay(x, "relative_abundance")
+
+# Quick check
+dim(abundance)   # rows = taxa, columns = samples
+abundance[1:5, 1:5]
+abundance_df <- as.data.frame(abundance)
+
+# Add taxa names as a column
+abundance_df$taxa <- rownames(abundance_df)
+
+# Move taxa to the first column
+abundance_df <- abundance_df %>% relocate(taxa)
+
+head(abundance_df)
+write.csv(abundance_df, "MetaCardis2020_relative_abundance.csv", row.names = FALSE)
+
+```
+```{r}
+# Extract your object
+x <- relative_abundance[[1]]
+
+# 1. Abundance matrix (taxa x samples)
+abundance <- assay(x, "relative_abundance")
+
+# 2. Sample metadata
+sample_meta <- as.data.frame(colData(x))
+
+# 3. Taxa metadata (taxonomy info)
+taxa_meta <- as.data.frame(rowData(x))
+
+# ---------------------------------------
+# Option A: Save separately
+# ---------------------------------------
+
+# Save abundance tabl
+
+# Save sample metadata
+write.csv(sample_meta, "MetaCardis2020_sample_metadata.csv", row.names = TRUE)
+
+# Save taxa metadata
+write.csv(taxa_meta, "MetaCardis2020_taxa_metadata.csv", row.names = TRUE)
+
+
+# ---------------------------------------
+# Option B: Long tidy format (joined)
+# --------------------------------------
+```
