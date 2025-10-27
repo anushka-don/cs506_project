@@ -35,23 +35,40 @@ Samples: 1,831 microbiome profiles from patients.
 Features: 697 microbial taxa at the species level.
 
 # Midterm Report
-The gut microbiome has been known to play a major role in influencing human health. However, an important question remains — can the composition of these microbes help us understand a person’s health status?  
+1. Preliminary Visualizations of Data
 
-That is the main goal of our project. We are analyzing gut microbiome data from 1,800 patients with different health conditions, including impaired glucose tolerance (IGT), heart failure (HF), coronary artery disease (CAD), type 2 diabetes (T2D), and a healthy control group. Using relative abundance data from about 600 microbial species, we aim to identify which microbes differ significantly across disease conditions and could serve as potential indicators of health or disease.  
+We began by exploring the gut microbiome dataset to understand its structure and variation. Using alpha and beta diversity analyses, we visualized the diversity patterns within and across samples.
 
-We began by cleaning the dataset. Microbes with more than 1% missing values were removed to maintain data quality. Overall, the dataset was fairly clean and required minimal preprocessing.  
+* Alpha diversity (within-sample diversity) helped us measure how many distinct microbial species were present in each individual’s gut.
+* Beta diversity (between-sample diversity) allowed us to compare microbial composition across different disease groups — including IGT, HF,   CAD, T2D, and healthy controls.
+The visualizations showed overlapping diversity trends across groups, suggesting that microbial composition is highly individualized yet subtly influenced by disease status.
 
-Next, we calculated both alpha and beta diversity to understand the microbial variation within and between samples.   
-1. Alpha diversity measures how diverse the microbial community is within a single sample.
-2. Beta diversity compares the microbial composition between different samples or groups.
+2. Detailed Description of Data Processing Done So Far
 
-We visualized these results to compare the diversity across different disease conditions. 
+The dataset consisted of 1,800 patient samples with relative abundance values for around 600 microbial species.
+To ensure high data quality:
 
-We then performed clustering based on microbial composition to see if patients naturally grouped according to their health condition. However, no clear or well-separated clusters were observed. This suggests that while disease conditions may influence microbial abundance, the overall microbial structure is quite complex and overlapping among groups.   
+* Microbes with more than 1% missing values were removed.
+* Basic preprocessing such as normalization and handling of missing values was performed.
+* The dataset required minimal cleaning overall, indicating good data integrity.
+  This step ensured that downstream analyses such as diversity estimation and clustering were based on reliable, complete data.
 
-Our next goal is to identify the specific microbial populations that differ across health conditions. This will involve feature selection and feature engineering to pinpoint which microbes have the most influence.  
+3. Detailed Description of Data Modeling Methods Used So Far
 
-So far, we have identified several microbes showing significant differences in relative abundance between disease groups using the Mann–Whitney (MW) test and other statistical approaches. These findings will help guide our next phase of analysis and model development.  
+We performed unsupervised learning techniques to uncover natural patterns in the data:
+
+* Clustering analysis (using microbial composition features) was applied to check if patients naturally grouped by health condition.
+* However, the resulting clusters were not clearly separable, indicating that microbial differences among disease conditions are subtle and complex rather than distinct.
+Additionally, we performed statistical testing (Mann–Whitney U test) to identify microbes with significantly different abundances between disease groups.
+These methods provided early insights into microbial patterns that may be relevant for future feature selection and predictive modeling.
+
+4. Preliminary Results
+
+No distinct clusters were observed in the unsupervised analyses, suggesting high inter-individual variability in gut microbiome composition.
+
+Despite this, statistical comparisons revealed several microbial species that differ significantly between disease conditions, indicating potential biomarkers.
+
+These early findings form the foundation for the next phase , applying supervised learning models to predict health status and assess which microbes contribute most to disease differentiation.  
 
 
 
