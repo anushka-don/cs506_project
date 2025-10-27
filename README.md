@@ -35,7 +35,7 @@ Samples: 1,831 microbiome profiles from patients.
 Features: 697 microbial taxa at the species level.
 
 # Midterm Report
-1. Preliminary Visualizations of Data
+# 1. Preliminary Visualizations of Data
 
 We began by exploring the gut microbiome dataset to understand its structure and variation. Using alpha and beta diversity analyses, we visualized the diversity patterns within and across samples.
 
@@ -43,7 +43,7 @@ We began by exploring the gut microbiome dataset to understand its structure and
 * Beta diversity (between-sample diversity) allowed us to compare microbial composition across different disease groups — including IGT, HF,   CAD, T2D, and healthy controls.
 The visualizations showed overlapping diversity trends across groups, suggesting that microbial composition is highly individualized yet subtly influenced by disease status.
 
-2. Detailed Description of Data Processing Done So Far
+# 2. Detailed Description of Data Processing Done So Far
 
 The dataset consisted of 1,800 patient samples with relative abundance values for around 600 microbial species.
 To ensure high data quality:
@@ -53,7 +53,7 @@ To ensure high data quality:
 * The dataset required minimal cleaning overall, indicating good data integrity.
   This step ensured that downstream analyses such as diversity estimation and clustering were based on reliable, complete data.
 
-3. Detailed Description of Data Modeling Methods Used So Far
+# 3. Detailed Description of Data Modeling Methods Used So Far
 
 We performed unsupervised learning techniques to uncover natural patterns in the data:
 
@@ -62,7 +62,7 @@ We performed unsupervised learning techniques to uncover natural patterns in the
 Additionally, we performed statistical testing (Mann–Whitney U test) to identify microbes with significantly different abundances between disease groups.
 These methods provided early insights into microbial patterns that may be relevant for future feature selection and predictive modeling.
 
-4. Preliminary Results
+# 4. Preliminary Results
 
 No distinct clusters were observed in the unsupervised analyses, suggesting high inter-individual variability in gut microbiome composition.
 
