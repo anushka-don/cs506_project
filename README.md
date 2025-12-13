@@ -72,7 +72,9 @@ make help           # Show all available commands
 
 The analysis pipeline consists of three notebooks that must be run in order:
 
-1. **`eda.ipynb` (Exploratory Data Analysis)**
+1.**`download_data_R.Rmd`** (Download data function:
+  - Data download from the library
+2. **`eda.ipynb` (Exploratory Data Analysis)**
    - **Input**: Raw CSV files from `data/`
    - **Output**: Preprocessed data in `data/results_EDA/tables/`:
      - `abundance_clr.csv` - CLR-transformed abundance
@@ -81,12 +83,12 @@ The analysis pipeline consists of three notebooks that must be run in order:
      - `abundance_filtered_relative.csv` - Filtered relative abundance
    - **Must run first**: Other notebooks depend on these outputs
 
-2. **`all_models_healthy_vs_disease.ipynb` (Model Comparison)**
+3. **`all_models_healthy_vs_disease.ipynb` (Model Comparison)**
    - **Input**: Preprocessed data from step 1
    - **Output**: Model comparison results and figures
    - **Can run after EDA**: Independent of `final_model.ipynb`
 
-3. **`final_model.ipynb` (Selected Final Model)**
+4. **`final_model.ipynb` (Selected Final Model)**
    - **Input**: Preprocessed data from step 1
    - **Output**: Final model results and predictions
    - **Can run after EDA**: Independent of `all_models_healthy_vs_disease.ipynb`
